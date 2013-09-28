@@ -2,7 +2,7 @@
 
 Camera::Camera()
 {
-    //cameraView.SetFromRect(sf::FloatRect(sf::VideoMode::GetDesktopMode().Height/2, sf::VideoMode::GetDesktopMode().Height/2, 1000, 1000));
+
 }
 
 Camera::~Camera()
@@ -35,5 +35,4 @@ void Camera::zoomCam(float z, sf::RenderWindow* rw, sf::View &cameraView)
 void Camera::rotateCam(sf::View &cameraView)
 {
     //
-
 }

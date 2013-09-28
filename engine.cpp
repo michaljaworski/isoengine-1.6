@@ -5,8 +5,8 @@ Engine::Engine()
     //get desktop size
     sf::VideoMode DesktopMode = sf::VideoMode::GetDesktopMode();
     //create new window handle
-    window = new sf::RenderWindow(DesktopMode, "IsoEngine2", sf::Style::None);
-    //window = new sf::RenderWindow(sf::VideoMode::GetMode(20), "IsoEngine2", sf::Style::Close);
+    //window = new sf::RenderWindow(DesktopMode, "IsoEngine2", sf::Style::None);
+    window = new sf::RenderWindow(sf::VideoMode::GetMode(20), "IsoEngine2", sf::Style::Close);
     //get view of the window and use it as the default view
     fixed = window->GetDefaultView();
     modview = fixed;
@@ -94,9 +94,8 @@ void Engine::ProcessInput()
 
 void Engine::RenderFrame()
 {
-    //window->SetView(window->GetDefaultView());
-    //std::cout << "render frame setView(fixed)\t" << std::endl;
     window->Display();
+    std::cout << window->GetFrameTime() << std::endl;
 }
 
 void Engine::Update()

@@ -63,11 +63,11 @@ void TileLoader::setDraw(sf::RenderWindow* rw)
 
 void TileLoader::mapDraw(int subTile, sf::RenderWindow* rw)
 {
-    rw->Clear(sf::Color::White);
+    rw->Clear(sf::Color::Black);
     int i, j, k, tilecnt = 0;
     for(i = 0; i < 10; i++)
     {
-        for(j = 0; j < 20; j++)
+        for(j = 0; j < 10; j++)
         {
             tileSprite.SetPosition((0+64*j), (0+64*i)/2);
             tileSprite.SetSubRect(subRect[subTile]);
@@ -75,7 +75,7 @@ void TileLoader::mapDraw(int subTile, sf::RenderWindow* rw)
             tilecnt++;
             //tileloader->tileDraw((0+64*j), (0+64*i)/2, 1, window);
         }
-        for(k = 0; k < 20; k++)
+        for(k = 0; k < 10; k++)
         {
             tileSprite.SetPosition((32+64*k), (32+64*i)/2);
             tileSprite.SetSubRect(subRect[subTile]);
@@ -84,5 +84,5 @@ void TileLoader::mapDraw(int subTile, sf::RenderWindow* rw)
             //tileloader->tileDraw((32+64*k), (32+64*i)/2, 3, window);
         }
     }
-    std::cout << "total tiles: " << tilecnt << std::endl;
+    //std::cout << "total tiles: " << tilecnt << std::endl;
 }
