@@ -1,0 +1,63 @@
+# depslib dependency file v1.0
+1380351404 source:/home/artax/CodeBlocksProjects/IsoEngine2/engine.cpp
+	"engine.hpp"
+
+1380352974 /home/artax/CodeBlocksProjects/IsoEngine2/engine.hpp
+	<SFML/Graphics.hpp>
+	"tileloader.hpp"
+	"maploader.hpp"
+	"camera.hpp"
+	<iostream>
+
+1380233477 source:/home/artax/CodeBlocksProjects/IsoEngine2/main.cpp
+	<SFML/Graphics.hpp>
+	<iostream>
+	"engine.hpp"
+
+1380351643 source:/home/artax/CodeBlocksProjects/IsoEngine2/tileloader.cpp
+	"tileloader.hpp"
+
+1380350251 /home/artax/CodeBlocksProjects/IsoEngine2/tileloader.hpp
+	<SFML/Graphics.hpp>
+	<string>
+	<fstream>
+	<iostream>
+	<vector>
+
+1380327615 /home/artax/CodeBlocksProjects/IsoEngine2/maploader.hpp
+	<SFML/Graphics.hpp>
+
+1380327609 source:/home/artax/CodeBlocksProjects/IsoEngine2/maploader.cpp
+	"maploader.hpp"
+	"tileloader.hpp"
+
+1380348303 source:/home/artax/CodeBlocksProjects/IsoEngine2/camera.cpp
+	"camera.hpp"
+
+1380346241 /home/artax/CodeBlocksProjects/IsoEngine2/camera.hpp
+	<SFML/Graphics.hpp>
+	<iostream>
+
+1380229082 /home/artax/SFML-master/include/SFML/Graphics.hpp
+	<SFML/Window.hpp>
+	<SFML/Graphics/BlendMode.hpp>
+	<SFML/Graphics/Color.hpp>
+	<SFML/Graphics/Font.hpp>
+	<SFML/Graphics/Glyph.hpp>
+	<SFML/Graphics/Image.hpp>
+	<SFML/Graphics/RenderStates.hpp>
+	<SFML/Graphics/RenderTexture.hpp>
+	<SFML/Graphics/RenderWindow.hpp>
+	<SFML/Graphics/Shader.hpp>
+	<SFML/Graphics/Shape.hpp>
+	<SFML/Graphics/CircleShape.hpp>
+	<SFML/Graphics/RectangleShape.hpp>
+	<SFML/Graphics/ConvexShape.hpp>
+	<SFML/Graphics/Sprite.hpp>
+	<SFML/Graphics/Text.hpp>
+	<SFML/Graphics/Texture.hpp>
+	<SFML/Graphics/Transform.hpp>
+	<SFML/Graphics/Vertex.hpp>
+	<SFML/Graphics/VertexArray.hpp>
+	<SFML/Graphics/View.hpp>
+
