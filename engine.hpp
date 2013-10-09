@@ -5,6 +5,7 @@
 #include "tileloader.hpp"
 #include "maploader.hpp"
 #include "camera.hpp"
+#include "screenhud.hpp"
 
 #include <iostream>
 
@@ -16,6 +17,7 @@ private:
     TileLoader* tileloader;
     sf::View fixed;
     sf::View modview;
+    ScreenHUD* onscreen;
 
     //init the engine
     bool Init();
@@ -30,6 +32,8 @@ private:
 
     //temp
     Camera* cameraview;
+    bool changed;
+    int tile_number;
 
 public:
     Engine();

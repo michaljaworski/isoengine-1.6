@@ -1,24 +1,31 @@
 # depslib dependency file v1.0
-1380354956 source:/home/artax/CodeBlocksProjects/IsoEngine2/engine.cpp
+1380661848 source:/home/artax/CodeBlocksProjects/IsoEngine2/engine.cpp
 	"engine.hpp"
 
-1380352974 /home/artax/CodeBlocksProjects/IsoEngine2/engine.hpp
+1380611417 p"
+
+1380575360 /home/artax/CodeBlocksProjects/IsoEngine2/engine.hpp
 	<SFML/Graphics.hpp>
 	"tileloader.hpp"
 	"maploader.hpp"
 	"camera.hpp"
 	<iostream>
 
+1380852151 
+
 1380233477 source:/home/artax/CodeBlocksProjects/IsoEngine2/main.cpp
 	<SFML/Graphics.hpp>
 	<iostream>
 	"engine.hpp"
 
-1380354852 source:/home/artax/CodeBlocksProjects/IsoEngine2/tileloader.cpp
+1380747863 source:/home/artax/CodeBlocksProjects/IsoEngine2/tileloader.cpp
 	"tileloader.hpp"
 
-1380350251 /home/artax/CodeBlocksProjects/IsoEngine2/tileloader.hpp
+1380852151 r.hpp"
+
+1380748353 /home/artax/CodeBlocksProjects/IsoEngine2/tileloader.hpp
 	<SFML/Graphics.hpp>
+	<rapidxml/rapidxml.hpp>
 	<string>
 	<fstream>
 	<iostream>
@@ -26,6 +33,8 @@
 
 1380327615 /home/artax/CodeBlocksProjects/IsoEngine2/maploader.hpp
 	<SFML/Graphics.hpp>
+
+1380611483 hics.hpp>
 
 1380327609 source:/home/artax/CodeBlocksProjects/IsoEngine2/maploader.cpp
 	"maploader.hpp"
@@ -60,4 +69,94 @@
 	<SFML/Graphics/Vertex.hpp>
 	<SFML/Graphics/VertexArray.hpp>
 	<SFML/Graphics/View.hpp>
+
+1380229082 hics/View.hpp>
+
+1380611515 source:c:\users\atreyu\codeblocksprojects\isoengine2\camera.cpp
+	"camera.hpp"
+
+1380611484 c:\users\atreyu\codeblocksprojects\isoengine2\camera.hpp
+	<SFML/Graphics.hpp>
+	<iostream>
+
+1380852152 source:c:\users\atreyu\codeblocksprojects\isoengine2\engine.cpp
+	"engine.hpp"
+
+1380611533 c:\users\atreyu\codeblocksprojects\isoengine2\engine.hpp
+	<SFML/Graphics.hpp>
+	"tileloader.hpp"
+	"maploader.hpp"
+	"camera.hpp"
+	<iostream>
+
+1380852151 c:\users\atreyu\codeblocksprojects\isoengine2\tileloader.hpp
+	<SFML/Graphics.hpp>
+	<rapidxml/rapidxml.hpp>
+	<string>
+	<fstream>
+	<iostream>
+	<vector>
+
+1380611483 c:\users\atreyu\codeblocksprojects\isoengine2\maploader.hpp
+	<SFML/Graphics.hpp>
+
+1380611417 source:c:\users\atreyu\codeblocksprojects\isoengine2\main.cpp
+	<SFML/Graphics.hpp>
+	<iostream>
+	"engine.hpp"
+
+1380611483 source:c:\users\atreyu\codeblocksprojects\isoengine2\maploader.cpp
+	"maploader.hpp"
+	"tileloader.hpp"
+
+1380852151 source:c:\users\atreyu\codeblocksprojects\isoengine2\tileloader.cpp
+	"tileloader.hpp"
+
+1380354761 source:/home/artax/CodeBlocksProjects/IsoEngine2/camera.cpp
+	"camera.hpp"
+
+1380346241 /home/artax/CodeBlocksProjects/IsoEngine2/camera.hpp
+	<SFML/Graphics.hpp>
+	<iostream>
+
+1380233477 source:/home/artax/CodeBlocksProjects/IsoEngine2/main.cpp
+	<SFML/Graphics.hpp>
+	<iostream>
+	"engine.hpp"
+
+1381265974 /home/artax/CodeBlocksProjects/IsoEngine2/engine.hpp
+	<SFML/Graphics.hpp>
+	"tileloader.hpp"
+	"maploader.hpp"
+	"camera.hpp"
+	"screenhud.hpp"
+	<iostream>
+
+1380748353 /home/artax/CodeBlocksProjects/IsoEngine2/tileloader.hpp
+	<SFML/Graphics.hpp>
+	<rapidxml/rapidxml.hpp>
+	<string>
+	<fstream>
+	<iostream>
+	<vector>
+
+1380327615 /home/artax/CodeBlocksProjects/IsoEngine2/maploader.hpp
+	<SFML/Graphics.hpp>
+
+1380327609 source:/home/artax/CodeBlocksProjects/IsoEngine2/maploader.cpp
+	"maploader.hpp"
+	"tileloader.hpp"
+
+1380753284 source:/home/artax/CodeBlocksProjects/IsoEngine2/tileloader.cpp
+	"tileloader.hpp"
+
+1381266486 source:/home/artax/CodeBlocksProjects/IsoEngine2/engine.cpp
+	"engine.hpp"
+
+1381267090 /home/artax/CodeBlocksProjects/IsoEngine2/screenhud.hpp
+	<SFML/Graphics.hpp>
+	<iostream>
+
+1381267127 source:/home/artax/CodeBlocksProjects/IsoEngine2/screenhud.cpp
+	"screenhud.hpp"
 

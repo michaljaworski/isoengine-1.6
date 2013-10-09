@@ -37,14 +37,17 @@
 			<Add library="sfml-window" />
 			<Add library="sfml-system" />
 		</Linker>
+		<Unit filename="arial.ttf" />
 		<Unit filename="camera.cpp" />
 		<Unit filename="camera.hpp" />
-		<Unit filename="cb.bmp" />
 		<Unit filename="engine.cpp" />
 		<Unit filename="engine.hpp" />
 		<Unit filename="main.cpp" />
+		<Unit filename="map.xml" />
 		<Unit filename="maploader.cpp" />
 		<Unit filename="maploader.hpp" />
+		<Unit filename="screenhud.cpp" />
+		<Unit filename="screenhud.hpp" />
 		<Unit filename="terrain_0.png" />
 		<Unit filename="tileloader.cpp" />
 		<Unit filename="tileloader.hpp" />

@@ -65,9 +65,9 @@ void TileLoader::mapDraw(int subTile, sf::RenderWindow* rw)
 {
     rw->Clear(sf::Color::Black);
     int i, j, k, tilecnt = 0;
-    for(i = 0; i < 10; i++)
+    for(i = 0; i < 20; i++)
     {
-        for(j = 0; j < 10; j++)
+        for(j = 0; j < 20; j++)
         {
             tileSprite.SetPosition((0+64*j), (0+64*i)/2);
             tileSprite.SetSubRect(subRect[subTile]);
@@ -75,7 +75,7 @@ void TileLoader::mapDraw(int subTile, sf::RenderWindow* rw)
             tilecnt++;
             //tileloader->tileDraw((0+64*j), (0+64*i)/2, 1, window);
         }
-        for(k = 0; k < 10; k++)
+        for(k = 0; k < 20; k++)
         {
             tileSprite.SetPosition((32+64*k), (32+64*i)/2);
             tileSprite.SetSubRect(subRect[subTile]);
@@ -86,3 +86,39 @@ void TileLoader::mapDraw(int subTile, sf::RenderWindow* rw)
     }
     //std::cout << "total tiles: " << tilecnt << std::endl;
 }
+
+void TileLoader::mapDraw_byTile(int subTile, sf::RenderWindow* rw)
+{
+    rw->Clear(sf::Color::Black);
+    int i, j, k, tilecnt = 0;
+    for(i = 0; i < 20; i++)
+    {
+        for(j = 0; j < 20; j++)
+        {
+            tileDraw((0+64*j), (0+64*i)/2, subTile, rw);
+            tilecnt++;
+            //tileloader->tileDraw((0+64*j), (0+64*i)/2, 1, window);
+        }
+        for(k = 0; k < 20; k++)
+        {
+            tileDraw((32+64*k), (32+64*i)/2, subTile, rw);
+            tilecnt++;
+            //tileloader->tileDraw((32+64*k), (32+64*i)/2, 3, window);
+        }
+    }
+    //std::cout << "total tiles: " << tilecnt << std::endl;
+}
+
+void TileLoader::xmlLoad(std::vector<int> xmlMap)
+{
+    //rapidxml::xml_document map;
+    //map.parse("map.xml");
+
+}
+
+
+
+
+
+
+
