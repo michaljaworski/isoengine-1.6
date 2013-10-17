@@ -29,7 +29,8 @@ void ScreenHUD::DrawHUD(sf::RenderWindow* rw, sf::String Text, double posx, doub
     //std::cout << "Writing text: " << std::endl;
     Text.SetFont(HUDFont);
     Text.SetSize(200);
-    Text.SetColor(sf::Color::Red);
+    Text.SetStyle(sf::Style::None);
+    Text.SetColor(sf::Color::Blue);
     Text.SetPosition(posx, posy);
     //Text.SetText("work you piece of shit");
     //rw->Clear(sf::Color::Blue);

@@ -14,6 +14,8 @@ private:
     sf::Sprite tileSprite;
     //std::vector<sf::IntRect> subRect;
     std::vector<int> xmlMap;
+    int tilewidth = 64, tileheight = 64;
+    int mapsize = 10;
 
 public:
     TileLoader();
@@ -25,6 +27,7 @@ public:
     void tileDraw(int x, int y, int subTile, sf::RenderWindow* rw);
     void mapDraw(int subTile, sf::RenderWindow* rw);
     void mapDraw_byTile(int subTile, sf::RenderWindow* rw);
+    void mapDraw_Diamond(int subTile, sf::RenderWindow* rw);
 
     //draw tiles at bottom of window in tileset
     void setDraw(sf::RenderWindow* rw);

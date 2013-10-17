@@ -30,10 +30,16 @@ private:
     //updates all engine variables
     void Update();
 
-    //temp
+    //Camera view and update, if scene has changed, redraw it
     Camera* cameraview;
     bool changed;
     int tile_number;
+
+    //temp
+    bool hudon;
+
+    //tilesizes
+    double tilewidth = 64.0f, tileheight = 64.0f;
 
 public:
     Engine();

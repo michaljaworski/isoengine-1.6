@@ -35,6 +35,8 @@ void TileLoader::loadTileSet(std::string filename, int setsize,
         }
     }
 
+    std::cout << "Total tiles loaded: " << tilecnt << std::endl;
+
     tileSprite.SetImage(tileImage[0]);
     tileSprite.SetSubRect(subRect[tile]);
     tileSprite.SetBlendMode(sf::Blend::Alpha);
@@ -69,7 +71,7 @@ void TileLoader::mapDraw(int subTile, sf::RenderWindow* rw)
     {
         for(j = 0; j < 20; j++)
         {
-            tileSprite.SetPosition((0+64*j), (0+64*i)/2);
+            tileSprite.SetPosition((0+tilewidth*j), (0+tilewidth*i)/2);
             tileSprite.SetSubRect(subRect[subTile]);
             rw->Draw(tileSprite);
             tilecnt++;
@@ -77,14 +79,14 @@ void TileLoader::mapDraw(int subTile, sf::RenderWindow* rw)
         }
         for(k = 0; k < 20; k++)
         {
-            tileSprite.SetPosition((32+64*k), (32+64*i)/2);
+            tileSprite.SetPosition((32+tilewidth*k), (32+tilewidth*i)/2);
             tileSprite.SetSubRect(subRect[subTile]);
             rw->Draw(tileSprite);
             tilecnt++;
             //tileloader->tileDraw((32+64*k), (32+64*i)/2, 3, window);
         }
     }
-    //std::cout << "total tiles: " << tilecnt << std::endl;
+    std::cout << "total drawn tiles: " << tilecnt << std::endl;
 }
 
 void TileLoader::mapDraw_byTile(int subTile, sf::RenderWindow* rw)
@@ -95,18 +97,37 @@ void TileLoader::mapDraw_byTile(int subTile, sf::RenderWindow* rw)
     {
         for(j = 0; j < 20; j++)
         {
-            tileDraw((0+64*j), (0+64*i)/2, subTile, rw);
+            tileDraw((0+tilewidth*j), (0+tilewidth*i)/2, subTile, rw);
             tilecnt++;
             //tileloader->tileDraw((0+64*j), (0+64*i)/2, 1, window);
         }
         for(k = 0; k < 20; k++)
         {
-            tileDraw((32+64*k), (32+64*i)/2, subTile, rw);
+            tileDraw((32+tilewidth*k), (32+tilewidth*i)/2, subTile, rw);
             tilecnt++;
             //tileloader->tileDraw((32+64*k), (32+64*i)/2, 3, window);
         }
     }
     //std::cout << "total tiles: " << tilecnt << std::endl;
+}
+
+void TileLoader::mapDraw_Diamond(int subTile, sf::RenderWindow* rw)
+{
+    rw->Clear(sf::Color::Black);
+    int i, j, k, tilecnt = 0;
+    for(k = mapsize*3/4; k >= 0; k--)
+    {
+        for(i = 0; i < mapsize; i++)
+        {
+            for(j = mapsize; j >= 0; j--)
+            {
+                tileDraw(((j*tilewidth/2)+(i*tilewidth/2)), (k*32)+((i*tileheight/4)-(j*tileheight/4)), subTile, rw);
+                rw->Draw(tileSprite);
+                tilecnt++;
+            }
+        }
+    }
+    std::cout << "total drawn tiles: " << tilecnt << std::endl;
 }
 
 void TileLoader::xmlLoad(std::vector<int> xmlMap)

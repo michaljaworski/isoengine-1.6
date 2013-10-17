@@ -15,12 +15,14 @@ Engine::Engine()
     //get view of the window and use it as the default view
     fixed = window->GetDefaultView();
     modview = fixed;
+    modview.SetCenter(DesktopMode.Width/2, DesktopMode.Height/2);
     //load camera view
     cameraview = new Camera();
     //load tileloader
     tileloader = new TileLoader();
     //HUD loader
     onscreen = new ScreenHUD();
+    hudon = false;
 
 }
 
@@ -36,17 +38,21 @@ bool Engine::Init()
     window->SetFramerateLimit(60);
     window->Clear(sf::Color::White);
 
-    //tileloader->loadTileSet("tileset.png", 32, 4, 2, 1);
+    //tileloader->loadTileSet("./tileset.png", 32, 4, 2, 1);
     tileloader->loadTileSet("./terrain_0.png", 64, 10, 14, 1);
+    //tileloader->loadTileSet("./tileset2.png", 64, 10, 14, 1);
 
     cameraview->drawCam(window, fixed);
 
     //tileloader->setDraw(window);      //draws set of available tiles at bottom of window
 
     //temp, used for testing map animation, delete
-    tileloader->mapDraw(1, window);
+    //tileloader->mapDraw(1, window);
+    tileloader->mapDraw_Diamond(1, window);
     tile_number = 1;
 
+
+    //display all that is drawn to screen
     window->Display();
 
     return true;
@@ -105,37 +111,44 @@ void Engine::ProcessInput()
                 } break;
                 case sf::Key::Right:
                 {
-                    cameraview->moveCam(64.0f, 0.0f, window, fixed);
+                    cameraview->moveCam(tilewidth, 0.0f, window, fixed);
                     changed = true;
                 } break;
                 case sf::Key::Left:
                 {
-                    cameraview->moveCam(-64.0f, 0.0f, window, fixed);
+                    cameraview->moveCam(-tilewidth, 0.0f, window, fixed);
                     changed = true;
                 } break;
                 case sf::Key::Up:
                 {
-                    cameraview->moveCam(0.0f, -64.0f, window, fixed);
+                    cameraview->moveCam(0.0f, -tileheight, window, fixed);
                     changed = true;
                 } break;
                 case sf::Key::Down:
                 {
-                    cameraview->moveCam(0.0f, 64.0f, window, fixed);
+                    cameraview->moveCam(0.0f, tileheight, window, fixed);
                     changed = true;
                 } break;
 
                 //temp case
                 case sf::Key::H:
                 {
+                    hudon ^= true;
                     sf::String test;
-                    test.SetText("suck it");
+                    test.SetText("hud_info");
+                    window->SetView(modview);
                     onscreen->DrawHUD(window, test, 200.0f, 300.0f);
-                    window->Draw(test);
+                } break;
+                case sf::Key::Tab:
+                {
+                    //this jumps to default view
+                    window->SetView(modview);
                 } break;
 
-
-
-                default: break;
+                default:
+                {
+                    changed = false;
+                } break;
             }
             changed = true;
         }
@@ -144,14 +157,13 @@ void Engine::ProcessInput()
 
 void Engine::RenderFrame()
 {
-    //window->Display();
-    //std::cout << window->GetFrameTime() << std::endl;
     //constant hud for simple data
+    if(hudon)
     {
-        sf::String test;
-        //test.SetText("test1");
-        onscreen->DrawHUD(window, test, 100.0f, 100.0f);
-        window->Draw(test);
+        window->SetView(modview);
+        sf::String test2;
+        test2.SetText("temp_hud");
+        onscreen->DrawHUD(window, test2, 100.0f, 100.0f);
     }
 }
 
@@ -159,10 +171,11 @@ void Engine::Update()
 {
     if(changed == true)
     {
-        tileloader->mapDraw(tile_number, window);
+        //tileloader->mapDraw(tile_number, window);
+        tileloader->mapDraw_Diamond(tile_number, window);
         changed = false;
         window->SetView(fixed);
-        window->Display();
+        //window->Display();
     } else
         window->Display();
 }
